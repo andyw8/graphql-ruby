@@ -2,16 +2,24 @@
 # frozen_string_literal: true
 
 require "spec_helper"
+require "minitest"
+require "sorbet-runtime"
+require "tapioca"
+require "tapioca/helpers/test/content"
+require "tapioca/helpers/test/dsl_compiler"
 
 module Tapioca
   module Dsl
     module Compilers
-      class GraphqlMutationSpec < ::DslSpec
+      class GraphqlMutationSpec < Minitest::Spec
+        include Tapioca::Helpers::Test::Content
+        include Tapioca::Helpers::Test::DslCompiler
+
         describe "Tapioca::Dsl::Compilers::GraphqlMutation" do
-          sig { void }
-          def before_setup
-            require "graphql"
-          end
+          # sig { void }
+          # def before_setup
+          #   require "graphql"
+          # end
 
           describe "initialize" do
             it "gathers no constants if there are no GraphQL::Schema::Mutation subclasses" do

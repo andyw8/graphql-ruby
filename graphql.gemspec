@@ -46,4 +46,5 @@ Gem::Specification.new do |s|
   s.add_development_dependency "jekyll-redirect-from"
   s.add_development_dependency "m", "~> 1.5.0"
   s.add_development_dependency "webrick"
+  s.add_development_dependency "tapioca"
 end
